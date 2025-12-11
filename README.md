@@ -1,8 +1,7 @@
-# python-tkinter-waveform-widget
+# Anthos
  Widget leveraging tkinter Canvas and librosa
 
- I found librosa's waveform draw function to be pretty cumbersome so this is my own
- attempt to implement that functionality as a simple tkinter widget.
+ A fork of ostcrom's Python widget, python-tkinter-waveform-widget, with a easier API
 
 Usage:
 ```
