@@ -19,7 +19,7 @@ class WaveWidget(Canvas):
             self.audio_loaded = False
 
 
-    def draw_wavform(self):
+    def draw(self):
         self.clear()
         width = int(self.config('width')[4])
         height = int(self.config('height')[4])
@@ -47,7 +47,7 @@ class WaveWidget(Canvas):
     def clear(self):
         self.delete("all")
 
-    def wave_config(self, wave_cnf = {}):
+    def config(self, wave_cnf = {}):
         for key,value in wave_cnf.items():
             if key in CLASS_KEYS:
                 self.__setattr__(key, value)
