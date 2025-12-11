@@ -1,39 +1,48 @@
-# Anthos
- Widget leveraging tkinter Canvas and librosa
+# **Anthos**
 
- A fork of ostcrom's Python widget, python-tkinter-waveform-widget, with a easier API
+A Tkinter-based waveform visualization widget using `Canvas` and `librosa`.
 
-Usage:
-```
-import tkwavewidget
+A fork of ostcrom’s *python-tkinter-waveform-widget*, with a easier API and cleaner, simpler configuration options.
+
+---
+
+## **Usage**
+
+```python
+import anthos
 import tkinter as tk
 
 main_window = tk.Tk()
-##Takes standard tkinter canvas options:
+
+# Standard Tkinter Canvas options:
 cnf = {
-  "height" : 100,
-  "width" : 500,
-  "bg" : "green"
+    "height": 100,
+    "width": 500,
+    "bg": "green"
 }
 
-##Wave options control how large the waveform is:
+# Waveform display options:
 wave_cnf = {
-  "x_scale" : 1
-  "y_scale" : 5
+    "x_scale": 1,
+    "y_scale": 5
 }
 
-path_to_audio = 'test.mp3'
+path_to_audio = "test.mp3"
 
-waveform_widget = tkwavewidget.WaveWidget(main_window, path_to_audio, cnf, wave_cnf)
+# Create waveform widget
+anthos = anthos.WaveWidget(
+    main_window,
+    path_to_audio,
+    cnf,
+    wave_cnf
+)
 
-##Draw waveform:
-waveform_widget.draw_wavform()
+# Draw the waveform
+anthos.draw()
 
-##The class inherits tkinter.Canvas:
-waveform_widget.place()
+# The class inherits from tkinter.Canvas
+anthos.place()
 
-waveform_widget.config(cnf)
-
-##To set x_scale and y_scale options:
-waveform_widget.wave_config(wave_cnf)
+# Update standard canvas configuration
+anthos.config(cnf)
 ```
